@@ -11,72 +11,31 @@ namespace TiSelvagem.Aplicacao
 {
     public class AlunoAplicacao
     {
-        private Contexto contexto;
+        private readonly AlunoRepositorioADO repositorio;
 
-        public void Inserir(Aluno aluno)
+        public AlunoAplicacao()
         {
-            string strQuery = string.Format("INSERT INTO Aluno (Nome,Mae,DataNascimento) VALUES ('{0}','{1}','{2}')",
-                aluno.Nome, aluno.Mae, aluno.DataNascimento);
-
-            using (contexto = new Contexto())
-            {
-                contexto.ExecutaComando(strQuery);
-            }
+            repositorio = new AlunoRepositorioADO();
         }
-
-        public void Alterar(Aluno aluno)
-        {
-            var strQuery = string.Format("UPDATE Aluno SET Nome = '{0}' , Mae = '{1}' , DataNascimento = '{2}' WHERE AlunoId = {3}", aluno.Nome,
-                aluno.Mae, aluno.DataNascimento, aluno.Id);
-            using (contexto = new Contexto())
-            {
-                contexto.ExecutaComando(strQuery);
-            }
-
-        }
-
         public void Salvar(Aluno aluno)
         {
-            if (aluno.Id > 0)
-                    Inserir(aluno);
-            else
-                    Alterar(aluno);
+            repositorio.Salvar(aluno);
         }
         public void Deletar(int id)
         {
-            var strQuery = string.Format("DELETE FROM Aluno WHERE AlunoId = {0}", id);
-            using (contexto = new Contexto())
-            {
-                contexto.ExecutaComando(strQuery);
-            }
+            repositorio.Deletar(id);
         }
 
         public List<Aluno> ListarTodos()
         {
-            using (contexto = new Contexto())
-            {
-                var sqlQuery = "SELECT * FROM Aluno";
-                var retornoDataReader = contexto.ExecutaComandoComRetorno(sqlQuery);
-                return TransformaReaderEmListaDeObjeto(retornoDataReader);
-            }
+           return repositorio.ListarTodos();
 
         }
 
-        private List<Aluno> TransformaReaderEmListaDeObjeto(SqlDataReader reader)
+        public Aluno ListarAlunoPorId(int id)
         {
-            var alunos = new List<Aluno>();
-            while (reader.Read())
-            {
-                alunos.Add(new Aluno()
-                {
-                    Id = int.Parse(reader[0].ToString()),
-                    Nome = reader[1].ToString(),
-                    Mae = reader[2].ToString(),
-                    DataNascimento = DateTime.Parse(reader[3].ToString())
-                });
-            }
-            reader.Close();
-            return alunos;
+            return repositorio.ListarAlunoPorId(id);
         }
+        
     }
 }

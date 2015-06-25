@@ -47,9 +47,9 @@
       <Project>{21858026-fe1a-4e87-85bc-fc4a2df75644}</Project>
       <Name>TiSelvagem.Dominio</Name>
     </ProjectReference>
-    <ProjectReference Include="..\TiSelvagem.Repositorio\TiSelvagem.Repositorio.csproj">
+    <ProjectReference Include="..\TiSelvagem.Repositorio\TiSelvagem.RepositorioADO.csproj">
       <Project>{97ea5a22-33fc-4f80-9c66-3b52eea77f65}</Project>
-      <Name>TiSelvagem.Repositorio</Name>
+      <Name>TiSelvagem.RepositorioADO</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

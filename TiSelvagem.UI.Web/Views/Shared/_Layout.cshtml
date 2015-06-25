@@ -8,9 +8,13 @@
     @Scripts.Render("~/bundles/modernizr")
 </head>
 <body>
-    @RenderBody()
+<div>
+    @Html.ActionLink("Home","Index","Home")
+    @Html.ActionLink("Cadastro de Aluno","Index","Aluno")
+</div>
+@RenderBody()
 
-    @Scripts.Render("~/bundles/jquery")
-    @RenderSection("scripts", required: false)
+@Scripts.Render("~/bundles/jquery")
+@RenderSection("scripts", required: false)
 </body>
 </html>

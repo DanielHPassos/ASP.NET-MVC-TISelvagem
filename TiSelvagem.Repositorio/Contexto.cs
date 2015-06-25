@@ -36,6 +36,11 @@ namespace TiSelvagem.Repositorio
             var cmdComando = new SqlCommand(strQuery, _con);
             return cmdComando.ExecuteReader();
         }
+        public object ExecutaComandoComUmaRetorno(string strQuery)
+        {
+            var cmdComando = new SqlCommand(strQuery, _con);
+            return cmdComando.ExecuteScalar();
+        }
         public void Dispose()
         {
             if(_con.State == ConnectionState.Open)

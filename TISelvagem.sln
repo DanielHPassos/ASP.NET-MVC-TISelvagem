@@ -5,7 +5,7 @@ VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UI.Dos", "UI.Dos\UI.Dos.csproj", "{E61FBDC9-6A47-4CBA-B900-E76CED3C02F7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TiSelvagem.Repositorio", "TiSelvagem.Repositorio\TiSelvagem.Repositorio.csproj", "{97EA5A22-33FC-4F80-9C66-3B52EEA77F65}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TiSelvagem.RepositorioADO", "TiSelvagem.Repositorio\TiSelvagem.RepositorioADO.csproj", "{97EA5A22-33FC-4F80-9C66-3B52EEA77F65}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TiSelvagem.Dominio", "TiSelvagem.Dominio\TiSelvagem.Dominio.csproj", "{21858026-FE1A-4E87-85BC-FC4A2DF75644}"
 EndProject
